@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body{
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
     height: 100vh;
     margin: 0;
+    font-family: "Roboto", sans-serif;;
 }
 
 h1,p,h2{
     margin: 0;
+}
+
+aside{
+    background-color: rgb(233, 233, 233);
+    display: flex;
+    flex-direction: column;
 }
 
 img[src = "https://www.svgrepo.com/show/251946/plus.svg"]{
@@ -14,4 +22,55 @@ img[src = "https://www.svgrepo.com/show/251946/plus.svg"]{
     width: 30px;
     cursor: pointer;
 }
+
+img[src ="https://www.svgrepo.com/show/467439/user-circle-2.svg"]{
+    height: 45px;
+    width: auto;
+    align-self: center;
+}
+
+.user{
+    display: flex;
+    padding: 20px;
+    border-bottom: 2px black solid;
+    margin-bottom: 20px;
+}
+
+.user > h2{
+    font-size: 2rem;
+    margin-right: auto;
+    align-self: center;
+}
+
+.addTasks{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.addTasks > p{
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.addProject{
+    display: flex;
+    padding: 10px 20px 20px 10px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.addProject > p{
+    align-self: center;
+}
+
+.projects{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
 
