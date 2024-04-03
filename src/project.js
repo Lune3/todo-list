@@ -16,14 +16,13 @@ class project{
 
 function projectDialogHandler(){
     const projectDialog = document.querySelector(".projectDialog");
-    projectDialog.showModal();
+    projectDialog.show();
     
     const projectSubmitButton = document.querySelector("form > button");
-    const projectInput = document.querySelector("input");
+    // const projectInput = document.querySelector("input");
 
     projectSubmitButton.addEventListener("click" , () => { 
-        console.log(4);
-        projectInput.value = '';
+        projectCreate(document.querySelector("#projectName").value);
         projectDialog.close();
 
     }) 
