@@ -69,8 +69,26 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 30px;
 }
 
+.projectList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.projectList li{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.projectList li img{
+    align-self: center;
+    width: 25px;
+    height: auto;
+}
 
 
 

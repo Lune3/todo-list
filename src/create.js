@@ -25,4 +25,10 @@ function createHeading(number,text,className = ""){
     }
 }
 
-export {createP,createHeading};
+function createImg(src){
+    const img = new Image();
+    img.src = src;
+    return img;
+}
+
+export {createP,createHeading,createImg};
