@@ -42,14 +42,14 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
     align-self: center;
 }
 
-.addTasks{
+.addTask{
     display: flex;
     justify-content: center;
     gap: 20px;
     padding-top: 20px;
 }
 
-.addTasks > p{
+.addTask > p{
     align-self: center;
     font-size: 1.5rem;
 }

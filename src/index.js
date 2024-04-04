@@ -1,9 +1,14 @@
 import './styleSheet.css';
-import {createP,createHeading} from './create';
 import {projectDialogHandler} from './project';
+import {taskDialogHandler} from './tasks';
 
-const projectAdd = document.querySelector('img[src="https://www.svgrepo.com/show/251946/plus.svg"]');
+const projectAdd = document.querySelector('.addProject img');
 projectAdd.addEventListener("click",() => {
     projectDialogHandler();
+})
+
+const taskAdd = document.querySelector('.addTask img');
+taskAdd.addEventListener("click" , () => {
+    taskDialogHandler();
 })
 
