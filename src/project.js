@@ -19,13 +19,13 @@ function projectDialogHandler(){
     projectDialog.show();
     
     const projectSubmitButton = document.querySelector("form > button");
-    // const projectInput = document.querySelector("input");
+    const projectInput = document.querySelector("input");
 
     projectSubmitButton.addEventListener("click" , () => { 
-        projectCreate(document.querySelector("#projectName").value);
+        projectCreate(projectInput.value);
         projectDialog.close();
 
-    }) 
+    },{once : true});
 
 
 }
