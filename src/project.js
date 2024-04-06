@@ -9,7 +9,7 @@ class project{
         this.projectName = projectName;
     }
 
-
+    
     static counterIncrement(){
         this.projectCounter++;
         return this.projectCounter;
@@ -31,13 +31,13 @@ function projectDialogHandler(){
     const projectDialog = document.querySelector(".projectDialog");
     projectDialog.showModal();
     
-    const projectSubmitButton = document.querySelector("form > button");
+    const projectSubmitButton = document.querySelector(".projectForm > button");
     const projectInput = document.querySelector("input");
     
     projectSubmitButton.addEventListener("click" , (e) => { 
         e.preventDefault();
-        document.querySelector("form").checkValidity();
-        if(document.querySelector("form").reportValidity()){
+        document.querySelector(".projectForm").checkValidity();
+        if(document.querySelector(".projectForm").reportValidity()){
             project.projectCreate(projectInput.value);
             projectInput.value = "";
             projectDialog.close();
