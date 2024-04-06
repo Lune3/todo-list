@@ -1,3 +1,5 @@
+import {createP,createImg,createHeading} from './create';
+import {format} from "date-fns";
 const tasks = [];
 
 class task{
@@ -6,6 +8,14 @@ class task{
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+    }
+
+    createTask(){
+        const taskGrid = document.querySelector(".taskGrid");
+        const newTask = document.createElement("div");
+        const date = format(this.dueDate, 'yyyy/MM/dd');
+        const today = format(new Date(), 'yyyy/MM/dd');
+        newTask.append(createHeading(2,this.title),createP(this.description),)
     }
 
 

@@ -1,5 +1,6 @@
 import {createP,createImg} from './create';
 import {tasksInitialize} from './tasks';
+import {format,parseISO} from "date-fns";
 
 const projects = [];
 
@@ -9,7 +10,8 @@ class project{
         this.projectName = projectName;
     }
 
-    
+    static currentProject = 1;
+
     static counterIncrement(){
         this.projectCounter++;
         return this.projectCounter;
@@ -45,7 +47,9 @@ function projectDialogHandler(){
     },{once : true});
 }
 
+function getCurrentProject(){
+    return project.currentProject;
+}
 
 
-
-export {projectDialogHandler};
+export {projectDialogHandler,getCurrentProject};
