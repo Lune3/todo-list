@@ -1,5 +1,5 @@
 import {createP,createImg,createHeading} from './create';
-import {format} from "date-fns";
+import {format,formatDistance} from "date-fns";
 const tasks = [];
 
 class task{
@@ -15,10 +15,11 @@ class task{
         const newTask = document.createElement("div");
         const date = format(this.dueDate, 'yyyy/MM/dd');
         const today = format(new Date(), 'yyyy/MM/dd');
-        newTask.append(createHeading(2,this.title),createP(this.description),)
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        newTask.append(createHeading(2,this.title),createP(this.description),createP(formatDistance(date,today)),createP(this.priority),input);
+        taskGrid.append(newTask);
     }
-
-
 }
 
 function tasksInitialize(){
@@ -42,7 +43,7 @@ function taskDialogHandler(){
                 values.push(input.value);
             });
             const newTask = new task(...values);
-            tasks.push(newTask);
+            newTask.createTask();
             taskDialog.close();
         }
     },{once: true});

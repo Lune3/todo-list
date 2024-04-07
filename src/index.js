@@ -1,5 +1,5 @@
 import './styleSheet.css';
-import {projectDialogHandler} from './project';
+import {projectDialogHandler,projectEmpty} from './project';
 import {taskDialogHandler} from './tasks';
 
 const projectAdd = document.querySelector('.addProject img');
@@ -9,6 +9,12 @@ projectAdd.addEventListener("click",() => {
 
 const taskAdd = document.querySelector('.addTask img');
 taskAdd.addEventListener("click" , () => {
-    taskDialogHandler();
+    if(!projectEmpty()){
+        taskDialogHandler();
+    }
+    else{
+        alert("Please add a project first");
+    }
 })
+
 

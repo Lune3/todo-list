@@ -1,11 +1,10 @@
 import {createP,createImg} from './create';
 import {tasksInitialize} from './tasks';
-import {format,parseISO} from "date-fns";
 
-const projects = [];
 
 class project{
-    static projectCounter = 0;
+    static projects = [];
+    static projectCounter = -1;
     constructor(projectName){
         this.projectName = projectName;
     }
@@ -24,9 +23,12 @@ class project{
         li.append(createP(projectName));
         li.append(createImg('https://www.svgrepo.com/show/463489/delete-alt.svg'));
         projectList.append(li);
-        projects.push(li);
+        project.projects.push(li);
+        console.log(project.projects);
         tasksInitialize();
     }
+
+
 }
 
 function projectDialogHandler(){
@@ -51,5 +53,21 @@ function getCurrentProject(){
     return project.currentProject;
 }
 
+function projectEmpty(){
+    if(project.projects.length == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
-export {projectDialogHandler,getCurrentProject};
+function projectListener(){
+    project.projects.forEach(project => {
+        project.addEventListener("click", () => {
+            console.log(4);
+        })
+    });
+}
+
+export {projectDialogHandler,getCurrentProject,projectEmpty,projectListener};
