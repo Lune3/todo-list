@@ -25,8 +25,8 @@ const project =(function(){
         projectList.addEventListener("click",(e) => {
             let project = e.target;
             if(project.tagName === 'P'){
-                const parentLi = project.parentNode;
-                loadProject(parseInt(parentLi.className.charAt(parentLi.className.length)));
+                const parentLi = project.parentNode.className;
+                loadProject(parseInt(parentLi.substring(1)));
             }
         })
     }
