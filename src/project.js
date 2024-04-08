@@ -9,7 +9,7 @@ class project{
         this.projectName = projectName;
     }
 
-    static currentProject = 1;
+    static currentProject = 0;
 
     static counterIncrement(){
         this.projectCounter++;
@@ -20,15 +20,13 @@ class project{
         const projectList = document.querySelector(".projectList");
         const li = document.createElement('li');
         li.className = `p${project.counterIncrement()}`;
-        li.append(createP(projectName));
-        li.append(createImg('https://www.svgrepo.com/show/463489/delete-alt.svg'));
+        li.append(createP(projectName),createImg('https://www.svgrepo.com/show/463489/delete-alt.svg'));
         projectList.append(li);
         project.projects.push(li);
         console.log(project.projects);
+        this.currentProject = this.projectCounter;
         tasksInitialize();
     }
-
-
 }
 
 function projectDialogHandler(){
@@ -53,6 +51,10 @@ function getCurrentProject(){
     return project.currentProject;
 }
 
+function setCurrentProject(current){
+    project.currentProject = current;
+}
+
 function projectEmpty(){
     if(project.projects.length == 0){
         return true;
@@ -70,4 +72,4 @@ function projectListener(){
     });
 }
 
-export {projectDialogHandler,getCurrentProject,projectEmpty,projectListener};
+export {projectDialogHandler,getCurrentProject,projectEmpty,projectListener,setCurrentProject};

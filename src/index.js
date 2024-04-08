@@ -1,6 +1,6 @@
 import './styleSheet.css';
 import {projectDialogHandler,projectEmpty} from './project';
-import {taskDialogHandler} from './tasks';
+import {taskDialogHandler,loadProject} from './tasks';
 
 const projectAdd = document.querySelector('.addProject img');
 projectAdd.addEventListener("click",() => {
@@ -17,4 +17,22 @@ taskAdd.addEventListener("click" , () => {
     }
 })
 
+const project =(function(){
+    const projectList = document.querySelector(".projectList");
+    
+    
+    function projectListener(){
+        projectList.addEventListener("click",(e) => {
+            let project = e.target;
+            if(project.tagName === 'P'){
+                const parentLi = project.parentNode;
+                loadProject(parseInt(parentLi.className.charAt(parentLi.className.length)));
+            }
+        })
+    }
+
+    return {projectListener};
+})();
+
+project.projectListener();
 

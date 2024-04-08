@@ -1,5 +1,7 @@
-import {createP,createImg,createHeading} from './create';
+import {createP,createHeading} from './create';
 import {format,formatDistance} from "date-fns";
+import { getCurrentProject,setCurrentProject} from './project';
+
 const tasks = [];
 
 class task{
@@ -18,6 +20,9 @@ class task{
         const input = document.createElement("input");
         input.type = "checkbox";
         newTask.append(createHeading(2,this.title),createP(this.description),createP(formatDistance(date,today)),createP(this.priority),input);
+        let index = getCurrentProject();
+        tasks[index].push(newTask);
+        console.log(tasks);
         taskGrid.append(newTask);
     }
 }
@@ -49,4 +54,11 @@ function taskDialogHandler(){
     },{once: true});
 }
 
-export {tasksInitialize,taskDialogHandler};
+function loadProject(current){
+    setCurrentProject(current);
+    const taskGrid = document.querySelector(".taskGrid");
+    taskGrid.textContent = "";
+    taskGrid.append(...tasks[current]);
+}
+
+export {tasksInitialize,taskDialogHandler,loadProject};
