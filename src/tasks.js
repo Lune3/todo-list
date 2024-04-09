@@ -61,4 +61,14 @@ function loadProject(current){
     taskGrid.append(...tasks[current]);
 }
 
-export {tasksInitialize,taskDialogHandler,loadProject};
+function deleteTask(taskArrToBeDeleted){
+    tasks.splice(taskArrToBeDeleted,1);
+}
+
+function setTaskComplete(target){
+    
+}
+
+
+
+export {tasksInitialize,taskDialogHandler,loadProject,deleteTask};

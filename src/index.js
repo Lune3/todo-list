@@ -5,7 +5,7 @@ import {taskDialogHandler,loadProject} from './tasks';
 const projectAdd = document.querySelector('.addProject img');
 projectAdd.addEventListener("click",() => {
     projectDialogHandler();
-})
+});
 
 const taskAdd = document.querySelector('.addTask img');
 taskAdd.addEventListener("click" , () => {
@@ -15,7 +15,7 @@ taskAdd.addEventListener("click" , () => {
     else{
         alert("Please add a project first");
     }
-})
+});
 
 const project =(function(){
     const projectList = document.querySelector(".projectList");
@@ -37,6 +37,16 @@ const project =(function(){
     }
 
     return {projectListener};
+})();
+
+const task = (function (){
+    const taskGrid = document.querySelector(".taskGrid");
+    taskGrid.addEventListener("click" , (e) => {
+        let element = e.target;
+        if(element.tagName === "INPUT"){
+            setTaskComplete(e.target);
+        }
+    })
 })();
 
 project.projectListener();

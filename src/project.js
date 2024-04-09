@@ -1,15 +1,15 @@
 import {createP,createImg} from './create';
-import {tasksInitialize} from './tasks';
+import {tasksInitialize,loadProject,deleteTask} from './tasks';
 
 
 class project{
     static projects = [];
     static projectCounter = -1;
+    static currentProject = 0;
+
     constructor(projectName){
         this.projectName = projectName;
     }
-
-    static currentProject = 0;
 
     static counterIncrement(){
         this.projectCounter++;
@@ -26,6 +26,7 @@ class project{
         console.log(project.projects);
         this.currentProject = this.projectCounter;
         tasksInitialize();
+        loadProject(this.currentProject);
     }
 }
 
@@ -33,9 +34,9 @@ function projectDialogHandler(){
     const projectDialog = document.querySelector(".projectDialog");
     projectDialog.showModal();
     
-    const projectSubmitButton = document.querySelector(".projectForm > button");
-    const projectInput = document.querySelector("input");
-    
+    const projectSubmitButton = document.querySelector(".projectForm button");
+    const projectInput = document.querySelector("#projectName");
+     
     projectSubmitButton.addEventListener("click" , (e) => { 
         e.preventDefault();
         document.querySelector(".projectForm").checkValidity();
@@ -64,20 +65,17 @@ function projectEmpty(){
     }
 }
 
-function projectListener(){
-    project.projects.forEach(project => {
-        project.addEventListener("click", () => {
-            console.log(4);
-        })
-    });
-}
 
 function deleteProject(projectToBeDeleted){
     project.projects.splice(projectToBeDeleted,1);
+    deleteTask(projectToBeDeleted);
     project.projects.forEach((project,i) => {
         project.className = `p${i}`;
     });
-    console.log(project.projects);
+    project.projectCounter = project.projects.length - 1;
+    if(project.projects.length > 0){
+        loadProject(0);
+    }
 }
 
-export {projectDialogHandler,getCurrentProject,projectEmpty,projectListener,setCurrentProject,deleteProject};
+export {projectDialogHandler,getCurrentProject,projectEmpty,setCurrentProject,deleteProject};
