@@ -90,11 +90,12 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
     height: auto;
 }
 
-.addTask{
-    margin-bottom: 50px;
+.taskGrid{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(75px,10%));
+    gap: 15px;
 }
-
-
 
 
 

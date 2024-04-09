@@ -72,4 +72,12 @@ function projectListener(){
     });
 }
 
-export {projectDialogHandler,getCurrentProject,projectEmpty,projectListener,setCurrentProject};
+function deleteProject(projectToBeDeleted){
+    project.projects.splice(projectToBeDeleted,1);
+    project.projects.forEach((project,i) => {
+        project.className = `p${i}`;
+    });
+    console.log(project.projects);
+}
+
+export {projectDialogHandler,getCurrentProject,projectEmpty,projectListener,setCurrentProject,deleteProject};

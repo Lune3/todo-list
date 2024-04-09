@@ -1,5 +1,5 @@
 import './styleSheet.css';
-import {projectDialogHandler,projectEmpty} from './project';
+import {projectDialogHandler,projectEmpty,deleteProject} from './project';
 import {taskDialogHandler,loadProject} from './tasks';
 
 const projectAdd = document.querySelector('.addProject img');
@@ -24,9 +24,14 @@ const project =(function(){
     function projectListener(){
         projectList.addEventListener("click",(e) => {
             let project = e.target;
+            const parentLi = project.parentNode.className;
             if(project.tagName === 'P'){
-                const parentLi = project.parentNode.className;
                 loadProject(parseInt(parentLi.substring(1)));
+            }
+            else if(project.tagName === 'IMG'){
+                deleteProject(parseInt(parentLi.substring(1)));
+                const deletedLi = document.querySelector(`.p${parentLi.substring(1)}`);
+                deletedLi.remove();
             }
         })
     }
