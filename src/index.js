@@ -18,6 +18,8 @@ function loadPreviousProjectAndTask(){
     }
 }
 
+loadPreviousProjectAndTask();
+
 
 projectAdd.addEventListener("click",() => {
     projectDialogHandler();
