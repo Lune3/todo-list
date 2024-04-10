@@ -24,6 +24,7 @@ class task{
         tasks[index].push(newTask);
         console.log(tasks);
         taskGrid.append(newTask);
+        styleTask(this.priority,newTask);
     }
 }
 
@@ -65,7 +66,7 @@ function deleteTask(taskArrToBeDeleted){
     tasks.splice(taskArrToBeDeleted,1);
 }
 
-function setTaskComplete(target,taskGrid){
+function setTaskComplete(target){
     let current = getCurrentProject();
     tasks[current].forEach((task,i) => {
         if(target == task){
@@ -75,6 +76,17 @@ function setTaskComplete(target,taskGrid){
     });
 }
 
+function styleTask(priority,newTask){
+    if(priority === 'Low'){
+        newTask.style.borderTop = "2px solid Lightgreen";
+    }
+    else if(priority === 'Medium'){
+        newTask.style.borderTop = "2px solid yellow";
+    }
+    else{
+        newTask.style.borderTop = "2px solid red";
+    }
+}
 
 
 export {tasksInitialize,taskDialogHandler,loadProject,deleteTask,setTaskComplete};

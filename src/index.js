@@ -45,7 +45,7 @@ const task = (function (){
         taskGrid.addEventListener("click" , (e) => {
             let element = e.target;
             if(element.tagName === "INPUT"){
-                setTaskComplete(e.target.parentNode,taskGrid);
+                setTaskComplete(e.target.parentNode);
             }
         })
     }
