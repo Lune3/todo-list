@@ -25,6 +25,7 @@ class task{
         console.log(tasks);
         taskGrid.append(newTask);
         styleTask(this.priority,newTask);
+        localStorage.setItem("tasks",tasks);
     }
 }
 
@@ -78,13 +79,13 @@ function setTaskComplete(target){
 
 function styleTask(priority,newTask){
     if(priority === 'Low'){
-        newTask.style.borderTop = "2px solid Lightgreen";
+        newTask.style.borderTop = "2px solid lightgreen";
     }
     else if(priority === 'Medium'){
-        newTask.style.borderTop = "2px solid yellow";
+        newTask.style.borderTop = "2px solid lightyellow";
     }
     else{
-        newTask.style.borderTop = "2px solid red";
+        newTask.style.borderTop = "2px solid lightred";
     }
 }
 
