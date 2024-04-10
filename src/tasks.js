@@ -65,10 +65,16 @@ function deleteTask(taskArrToBeDeleted){
     tasks.splice(taskArrToBeDeleted,1);
 }
 
-function setTaskComplete(target){
-    
+function setTaskComplete(target,taskGrid){
+    let current = getCurrentProject();
+    tasks[current].forEach((task,i) => {
+        if(target == task){
+            tasks[current].splice(i,1);
+            target.remove();
+        }
+    });
 }
 
 
 
-export {tasksInitialize,taskDialogHandler,loadProject,deleteTask};
+export {tasksInitialize,taskDialogHandler,loadProject,deleteTask,setTaskComplete};

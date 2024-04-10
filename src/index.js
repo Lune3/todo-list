@@ -1,6 +1,6 @@
 import './styleSheet.css';
 import {projectDialogHandler,projectEmpty,deleteProject} from './project';
-import {taskDialogHandler,loadProject} from './tasks';
+import {taskDialogHandler,loadProject,setTaskComplete} from './tasks';
 
 const projectAdd = document.querySelector('.addProject img');
 projectAdd.addEventListener("click",() => {
@@ -41,13 +41,17 @@ const project =(function(){
 
 const task = (function (){
     const taskGrid = document.querySelector(".taskGrid");
-    taskGrid.addEventListener("click" , (e) => {
-        let element = e.target;
-        if(element.tagName === "INPUT"){
-            setTaskComplete(e.target);
-        }
-    })
+    function taskCompletion(){
+        taskGrid.addEventListener("click" , (e) => {
+            let element = e.target;
+            if(element.tagName === "INPUT"){
+                setTaskComplete(e.target.parentNode,taskGrid);
+            }
+        })
+    }
+    return {taskCompletion};
 })();
 
+task.taskCompletion();
 project.projectListener();
 
