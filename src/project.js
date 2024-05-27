@@ -27,7 +27,6 @@ class project{
         this.currentProject = this.projectCounter;
         tasksInitialize();
         loadProject(this.currentProject);
-        localStorage.setItem("projects",project.projects);
     }
 }
 

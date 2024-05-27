@@ -63,25 +63,39 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
 
 .addProject > p{
     align-self: center;
+    font-size: 1.3rem;
 }
 
 .projects{
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+}
+
+.projects > p{
+    font-size: 1.2rem;
 }
 
 .projectList{
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
 .projectList li{
     display: flex;
     justify-content: center;
     font-size: 1.2rem;
+    gap: 5px;
+}
+
+.projectList li:hover{
+    background-color: rgb(64, 216, 201,0.2);
 }
 
 .projectList li img{

@@ -22,10 +22,8 @@ class task{
         newTask.append(createHeading(2,this.title),createP(this.description),createP(formatDistance(date,today)),createP(this.priority),input);
         let index = getCurrentProject();
         tasks[index].push(newTask);
-        console.log(tasks);
-        taskGrid.append(newTask);
         styleTask(this.priority,newTask);
-        localStorage.setItem("tasks",tasks);
+        taskGrid.append(newTask);
     }
 }
 

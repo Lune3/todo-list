@@ -2,23 +2,9 @@ import './styleSheet.css';
 import {projectDialogHandler,projectEmpty,deleteProject} from './project';
 import {taskDialogHandler,loadProject,setTaskComplete} from './tasks';
 
-
 const projectAdd = document.querySelector('.addProject img');
 const projectList = document.querySelector(".projectList");
 const taskGrid = document.querySelector(".taskGrid");
-
-function loadPreviousProjectAndTask(){
-    const previousProject = localStorage.getItem("projects");
-    if(previousProject){
-        projectList.append(...previousProject);
-    }
-    const previousTask = localStorage.getItem("tasks");
-    if(previousTask){
-        taskGrid.append(...previousTask);
-    }
-}
-
-loadPreviousProjectAndTask();
 
 
 projectAdd.addEventListener("click",() => {
