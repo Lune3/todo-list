@@ -22,7 +22,6 @@ class task{
         newTask.append(createHeading(2,this.title),createP(this.description),createP(formatDistance(date,today)),createP(this.priority),input);
         let index = getCurrentProject();
         tasks[index].push(newTask);
-        styleTask(this.priority,newTask);
         taskGrid.append(newTask);
     }
 }
@@ -75,17 +74,7 @@ function setTaskComplete(target){
     });
 }
 
-function styleTask(priority,newTask){
-    if(priority === 'Low'){
-        newTask.style.borderRight = "2px solid green";
-    }
-    else if(priority === 'Medium'){
-        newTask.style.borderRight = "2px solid yellow";
-    }
-    else{
-        newTask.style.borderRight = "2px solid red";
-    }
-}
+
 
 
 export {tasksInitialize,taskDialogHandler,loadProject,deleteTask,setTaskComplete};

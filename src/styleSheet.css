@@ -112,9 +112,38 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
 .taskGrid{
     padding: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(75px,10%));
+    grid-template-columns: repeat(auto-fit,minmax(150px,10%));
     gap: 15px;
 }
+
+.taskGrid > div {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.taskGrid > div > h2{
+    margin-bottom: 8px;
+}
+
+.taskGrid > div > input{
+    margin: 0;
+}
+
+.taskGrid > div > p:nth-child(2){
+    word-wrap: break-word;
+    flex: 1;
+}
+
+.taskGrid > div > input::before{
+    content: 'Done';
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+}
+
 
 
 
