@@ -92,10 +92,15 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
     justify-content: center;
     font-size: 1.2rem;
     gap: 5px;
+    border-radius: 5px;
+}
+
+.projectList li > *{
+    cursor: pointer;
 }
 
 .projectList li:hover{
-    background-color: rgb(64, 216, 201,0.2);
+    background-color: rgb(37, 182, 210,0.3);
 }
 
 .projectList li img{

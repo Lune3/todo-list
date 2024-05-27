@@ -77,13 +77,13 @@ function setTaskComplete(target){
 
 function styleTask(priority,newTask){
     if(priority === 'Low'){
-        newTask.style.borderTop = "2px solid lightgreen";
+        newTask.style.borderRight = "2px solid green";
     }
     else if(priority === 'Medium'){
-        newTask.style.borderTop = "2px solid lightyellow";
+        newTask.style.borderRight = "2px solid yellow";
     }
     else{
-        newTask.style.borderTop = "2px solid lightred";
+        newTask.style.borderRight = "2px solid red";
     }
 }
 
