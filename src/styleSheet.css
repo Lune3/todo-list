@@ -83,13 +83,15 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     width: 100%;
 }
 
 .projectList li{
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 35px;
     font-size: 1.2rem;
     gap: 5px;
     border-radius: 5px;
@@ -144,6 +146,41 @@ img[src ="https://www.svgrepo.com/show/384669/account-avatar-profile-user-13.svg
     font-size: 1rem;
 }
 
+.projectDialog{
+    border-radius: 15px;
+}
+
+.projectDialog ul{
+    list-style: none;
+    padding: 0;
+}
+
+.projectDialog button{
+    height: 25px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.taskDialog{
+    border-radius: 15px;
+}
+
+.taskDialog ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taskDialog ul > li{
+    display: flex;
+    justify-content: space-between;
+}
+
+#dueDate{
+    width: 177px;
+}
 
 
 

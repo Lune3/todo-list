@@ -7,6 +7,15 @@ const projectList = document.querySelector(".projectList");
 const taskGrid = document.querySelector(".taskGrid");
 
 
+
+function userName(){
+    let name = prompt("Enter your Name");
+    const userDiv = document.querySelector(".user > h2");
+    userDiv.textContent = `${name}`;
+}
+
+userName();
+
 projectAdd.addEventListener("click",() => {
     projectDialogHandler();
 });
